@@ -243,7 +243,7 @@ app.post('/register', function(req, res) {
 	var email = req.param('email')
 	var password = req.param('password')
 	
-	var usr = new User({ username: 'bob', email: 'bob@example.com', password: 'secret' });
+	var usr = new User({ username: username, email: email, password: password});
 	usr.save(function(err) {
 	  if(err) {
  	   console.log(err);
