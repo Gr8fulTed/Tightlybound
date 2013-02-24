@@ -20,6 +20,7 @@ else{
         "db":"db"
     }
 }
+//function to connect to production or local db
 var generate_mongo_url = function(obj){
     obj.hostname = (obj.hostname || 'localhost');
     obj.port = (obj.port || 27017);
@@ -182,6 +183,7 @@ app.configure(function() {
 });
 
 
+// This maps urls to templates.
 app.get('/', function(req, res){
   res.render('index', { user: req.user });
 });
