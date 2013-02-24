@@ -92,15 +92,6 @@ userSchema.methods.generateRandomToken = function () {
 
 // Seed a user
 var User = mongoose.model('User', userSchema);
-var usr = new User({ username: 'bob', email: 'bob@example.com', password: 'secret' });
-usr.save(function(err) {
-  if(err) {
-    console.log(err);
-  } else {
-    console.log('user: ' + usr.username + " saved.");
-  }
-});
-
 
 // Passport session setup.
 //   To support persistent login sessions, Passport needs to be able to
@@ -240,6 +231,26 @@ app.get('/logout', function(req, res){
   req.logout();
   res.redirect('/');
 });
+
+app.get('/register', function(req, res) {
+	res.render('register', {user: req.user})
+})
+
+app.post('/register', function(req, res) {
+	var username = req.param('username')
+	var email = req.param('email')
+	var password = req.param('password')
+	
+	var usr = new User({ username: 'bob', email: 'bob@example.com', password: 'secret' });
+	usr.save(function(err) {
+	  if(err) {
+ 	   console.log(err);
+	  } else {
+ 	   console.log('user: ' + usr.username + " saved.");
+ 	   res.redirect('/login')
+	 }
+});
+})
 
 app.listen(port, function() {
   console.log('Express server listening on port 3000');
