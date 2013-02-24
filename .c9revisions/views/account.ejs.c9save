@@ -1,2 +1,0 @@
-{"ts":1361677279232,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
-{"contributors":["jspencer233@bigpond.com"],"silentsave":false,"ts":1361677287782,"patch":[[{"diffs":[[1,"<% layout('layout') -%>\n<p>Username: <%= user.username %></p>\n<p>Email: <%= user.email %></p>\n"]],"start1":0,"start2":0,"length1":0,"length2":94}]],"length":94,"saved":false}
