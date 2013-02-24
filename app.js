@@ -167,7 +167,7 @@ app.configure(function() {
   app.use( function (req, res, next) {
     if ( req.method == 'POST' && req.url == '/login' ) {
       if ( req.body.rememberme ) {
-        req.session.cookie.maxAge = 2592000000; // 30*24*60*60*1000 Rememeber 'me' for 30 days
+        req.session.cookie.maxAge = 2592000000; // 30*24*60*60*1000 Rememeber me for 30 days
       } else {
         req.session.cookie.expires = false;
       }
@@ -234,9 +234,9 @@ app.get('/logout', function(req, res){
   res.redirect('/');
 });
 
-app.get('/register', function(req, res) {
-	res.render('register', {user: req.user})
-})
+app.get('/register', ensureNotAuthenticated, function(req, res) {
+    res.render('register', {user: req.user});
+  });
 
 app.post('/register', function(req, res) {
 	var username = req.param('username')
@@ -267,4 +267,8 @@ app.listen(port, function() {
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) { return next(); }
   res.redirect('/login')
+}
+function ensureNotAuthenticated(req, res, next) {
+  if (!req.isAuthenticated()) { return next(); }
+  res.redirect('/')
 }
