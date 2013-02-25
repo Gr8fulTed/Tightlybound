@@ -242,8 +242,8 @@ app.post('/register', function(req, res) {
 	var username = req.param('username')
 	var email = req.param('email')
 	var password = req.param('password')
-	
-	var usr = new User({ username: username, email: email, password: password });
+	var fullname = req.param('fullname')
+	var usr = new User({ username: username, email: email, password: password, fullname: fullname });
 	usr.save(function(err) {
 	  if(err) {
  	   console.log(err);

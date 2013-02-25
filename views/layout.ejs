@@ -14,9 +14,8 @@
 		<% } else { %>
 			<p>
 			<a href="/">Home</a> | 
-			<a href="/account">Account</a> | 
-			<a href="/logout">Log Out</a> |
-			<a href="/register">Register</a>
+			<a href="/account"><%= user.fullname %></a> | 
+			<a href="/logout">Log Out</a>
 			</p>
 		<% } %>
 		<%- body %>
