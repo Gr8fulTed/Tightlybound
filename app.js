@@ -20,6 +20,12 @@ else{
         "db":"db"
     }
 }
+
+var logentries = require('node-logentries');
+var log = logentries.logger({
+  token:'6db05f45-7d47-41c2-9748-66f8aed13b66'
+});
+
 //function to connect to production or local db
 var generate_mongo_url = function(obj){
     obj.hostname = (obj.hostname || 'localhost');
