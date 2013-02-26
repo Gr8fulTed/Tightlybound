@@ -11,3 +11,16 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Installation:
+Linux requirements:
+To use this software you have to install openssh, with apt-get install openssh.
+
+For all:
+install node.js from nodejs.org for your platform,Linux requires building from source.
+Simply gitclone the repository and run a terminal inside the folder (cd Tightlybound/ ),
+Then run "npm install" to install all the dependencies.
+Then run "node app -p <port>" with the port number as the one you want Eg. Node app -p 3004, Linux users can only run at a port higher then 1024 when you are not root.
+Simply open your browser and go to localhost:port you choose
+
+These steps are still under change so this will be edited when this breaks.
