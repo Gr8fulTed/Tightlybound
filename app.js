@@ -23,7 +23,7 @@ else{
 
 var logentries = require('node-logentries');
 var log = logentries.logger({
-  token:'6db05f45-7d47-41c2-9748-66f8aed13b66'
+  token:'2d9a3fff-14bf-473e-b439-532c5a29d8dd'
 });
 
 //function to connect to production or local db
@@ -44,7 +44,7 @@ mongoose.connect(mongourl)
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback() {
-  console.log('Connected to DB');
+  log.log('Connected to DB');
 });
 
 var port = process.env.VMC_APP_PORT || 3000
@@ -252,16 +252,16 @@ app.post('/register', function(req, res) {
 	var usr = new User({ username: username, email: email, password: password, fullname: fullname });
 	usr.save(function(err) {
 	  if(err) {
- 	   console.log(err);
+ 	   log.log(err);
 	  } else {
- 	   console.log('user: ' + usr.username + " saved.");
+ 	   log.log('user: ' + usr.username + " saved.");
 	 }
   res.redirect('/login')
 });
 })
 
 app.listen(port, function() {
-  console.log('Express server listening on port 3000');
+  log.log('Express server listening on port 3000');
 });
 
 
