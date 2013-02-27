@@ -12,13 +12,17 @@ In your little slice of the network.
 
 Installation:
 Linux requirements:
-To use this software you have to install openssh, with apt-get install openssh.
+To use this software you have to install openssl, with apt-get install openssl.
 
 For all:
 install node.js from nodejs.org for your platform,Linux requires building from source.
+
 Simply gitclone the repository and run a terminal inside the folder (cd Tightlybound/ ),
+
 Then run "npm install" to install all the dependencies.
+
 Then run "node app -p <port>" with the port number as the one you want Eg. Node app -p 3004, Linux users can only run at a port higher then 1024 when you are not root.
+
 Simply open your browser and go to localhost:port you choose
 
 These steps are still under change so this will be edited when this breaks.
