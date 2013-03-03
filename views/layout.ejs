@@ -15,7 +15,6 @@
         padding-bottom: 40px;
       }
     </style>
-    <!-- <link href="css/style.css" rel="stylesheet"> -->
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -37,10 +36,10 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               		<% if (!user) { %>
-			           		<li><a href="/">Home</a></li>
+			           		<li><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
 			              	<li><a href="/register">Register</a></li>
 	              	<% } else { %>
-		           			<li><a href="/">Home</a>
+		           			<li><a href="/"><i class="icon-home icon-white"></i> Home</a>
 		              <% } %>
             </ul>
         <% if(!user) { %>
